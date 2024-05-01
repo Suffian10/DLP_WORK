@@ -1,21 +1,20 @@
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+/* Camera.css */
+
+.camera {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background color */
 }
 
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  max-width: 80%;
+.cam {
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .button-container {
@@ -23,10 +22,41 @@
   text-align: center;
 }
 
-.camera {
-  text-align: center;
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue button color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.cam{
-    border: 10px solid black;
-    margin: 35px;
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.modal img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .cam {
+    width: 100%;
+    border-radius: 0;
+  }
 }

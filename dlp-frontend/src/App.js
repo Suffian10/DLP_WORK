@@ -7,24 +7,20 @@ import Axios from "axios";
 function App() {
   const [data, setData] = useState("");
   const [camClick, setCamClick] = useState(false);
+  const [upClick, setUpClick] = useState(false);
+
 
   const handleCamClick = () => {
     setCamClick(true);
+    setUpClick(false);
+
   };
 
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await Axios.get("http://localhost:5000/data");
-  //       setData(response.data.message);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     }
-  //   };
+  const handleUpClick = () => {
+    setUpClick(true);
+    setCamClick(false);
 
-  // useEffect(() => {
-  //   fetchData(); 
-  // }, []); 
-
+  };
   return (
     <div className="App">
       {camClick ? (
@@ -34,7 +30,15 @@ function App() {
       ) : (
         <>
           <button onClick={handleCamClick}>Camera</button>
+        </>
+      )}
+      {upClick ? (
+        <div>
           <Upload />
+        </div>
+      ) : (
+        <>
+          <button onClick={handleUpClick}>Upload</button>
         </>
       )}
     </div>
